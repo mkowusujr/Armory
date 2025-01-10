@@ -6,7 +6,7 @@ Recalling all the Lord has done for you
 - Create/Delete/Edit notes
 - Create/Delete/Edit tags
 - Notes have a title, date, multiple verses, tags, body-text
-- When users open the app they are greeter with a random note from the past
+- When users open the app they are greeted with a random note from the past
 	- Include the date the note was created
 
 ## Enhancement Features
