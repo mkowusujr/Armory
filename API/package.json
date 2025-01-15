@@ -1,0 +1,29 @@
+{
+  "name": "API",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7"
+  },
+  "scripts": {
+    "dev": "npx nodemon -r src/server.ts",
+    "start": "node -r src/server.js",
+    "format": "npx prettier --write .",
+    "db": "npx prisma studio",
+    "prisma": "npx prisma generate",
+    "migrate": "npx prisma migrate dev"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.6",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.4.2",
+    "prisma": "^6.2.1",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
