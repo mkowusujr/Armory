@@ -1,0 +1,32 @@
+-- CreateTable
+CREATE TABLE "User" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "name" TEXT NOT NULL,
+    "password" TEXT NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "Note" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "text" TEXT NOT NULL,
+    "date" DATETIME NOT NULL,
+    "title" TEXT NOT NULL,
+    "userID" INTEGER NOT NULL,
+    CONSTRAINT "Note_userID_fkey" FOREIGN KEY ("userID") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "Verses" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "notesID" INTEGER NOT NULL,
+    "location" TEXT NOT NULL,
+    CONSTRAINT "Verses_notesID_fkey" FOREIGN KEY ("notesID") REFERENCES "Note" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "Tags" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "notesID" INTEGER NOT NULL,
+    "name" TEXT NOT NULL,
+    CONSTRAINT "Tags_notesID_fkey" FOREIGN KEY ("notesID") REFERENCES "Note" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
