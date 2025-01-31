@@ -1,6 +1,7 @@
 import {PrismaClient, User} from "@prisma/client";
 
 const prisma = new PrismaClient();
+//**For some reason all variables with {username} is causing an error. */
 
 export const getAllUsers = async () => {
 	const users = await prisma.user.findMany({
